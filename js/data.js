@@ -361,41 +361,42 @@ const dadosQuiz = [
         id: 8,
         pergunta: 'O que é a dessalinização por osmose reversa?',
         opcoes: [
-            'Processo de fervura da água para remover impurezas',
-            'Filtragem da água através de areia e cascalho',
-            'Remoção de sais da água através de membranas semipermeáveis',
-            'Adição de produtos químicos para purificar a água'
+            'Processo de evaporação da água salgada',
+            'Filtração da água através de membranas semipermeáveis',
+            'Adição de produtos químicos para neutralizar o sal',
+            'Congelamento da água para separar o sal'
         ],
-        resposta: 2,
-        explicacao: 'A osmose reversa é um processo que utiliza membranas semipermeáveis para remover sais e outras substâncias da água, tornando-a potável.'
+        resposta: 1,
+        explicacao: 'A osmose reversa é um processo de filtração que utiliza pressão para forçar a água através de membranas semipermeáveis que retêm os sais e impurezas, produzindo água potável.'
     },
     {
         id: 9,
-        pergunta: 'Qual a importância da educação ambiental na convivência com o semiárido?',
+        pergunta: 'Qual é a área aproximada do semiárido brasileiro?',
         opcoes: [
-            'Aumentar o consumo de água',
-            'Promover o desperdício de água',
-            'Conscientizar sobre o uso racional da água e a importância das tecnologias sustentáveis',
-            'Incentivar a migração para outras regiões'
+            '500 mil km²',
+            '1 milhão de km²',
+            '1,5 milhão de km²',
+            '2 milhões de km²'
         ],
-        resposta: 2,
-        explicacao: 'A educação ambiental é crucial para conscientizar a população sobre a importância do uso racional da água e a adoção de práticas e tecnologias sustentáveis para a convivência com o semiárido.'
+        resposta: 1,
+        explicacao: 'O semiárido brasileiro ocupa aproximadamente 1 milhão de km², abrangendo partes de 10 estados, principalmente na região Nordeste.'
     },
     {
         id: 10,
-        pergunta: 'Qual o papel das barragens subterrâneas no semiárido?',
+        pergunta: 'Qual tecnologia social utiliza o princípio da "água que cai do céu é bênção"?',
         opcoes: [
-            'Armazenar água na superfície para irrigação',
-            'Evitar a evaporação da água e recarregar o lençol freático',
-            'Desviar o curso de rios para outras regiões',
-            'Aumentar a salinidade do solo'
+            'Poços artesianos',
+            'Cisternas de captação de água da chuva',
+            'Dessalinizadores',
+            'Carros-pipa'
         ],
         resposta: 1,
-        explicacao: 'As barragens subterrâneas são construídas para reter a água da chuva no subsolo, evitando a evaporação e recarregando o lençol freático, o que permite o uso da água para agricultura e consumo.'
+        explicacao: 'As cisternas de captação de água da chuva se baseiam no princípio de que "a água que cai do céu é bênção", aproveitando as precipitações para garantir água potável durante os períodos de estiagem.'
     }
 ];
 
-// Exporta os dados para serem usados em outros módulos
-export { dadosMapa, dadosSolucoes, dadosDepoimentos, dadosQuiz };
-
-
+// Garantir que as variáveis sejam globais
+window.dadosMapa = dadosMapa;
+window.dadosSolucoes = dadosSolucoes;
+window.dadosDepoimentos = dadosDepoimentos;
+window.dadosQuiz = dadosQuiz;
