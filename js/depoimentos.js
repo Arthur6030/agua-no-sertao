@@ -1,10 +1,10 @@
 // Gerenciamento do carrossel de depoimentos
 class CarrosselDepoimentos {
     constructor() {
-        this.track = document.getElementById('depoimentos-track');
-        this.indicators = document.getElementById('depoimentos-indicators');
-        this.prevBtn = document.getElementById('prev-depoimento');
-        this.nextBtn = document.getElementById('next-depoimento');
+        this.track = document.getElementById("depoimentos-track");
+        this.indicators = document.getElementById("depoimentos-indicators");
+        this.prevBtn = document.getElementById("prev-depoimento");
+        this.nextBtn = document.getElementById("next-depoimento");
         this.currentSlide = 0;
         this.totalSlides = dadosDepoimentos.length;
         this.autoPlayInterval = null;
@@ -22,20 +22,14 @@ class CarrosselDepoimentos {
     }
 
     criarSlides() {
-        this.track.innerHTML = '';
+        this.track.innerHTML = "";
         
         dadosDepoimentos.forEach((depoimento, index) => {
-            const slide = document.createElement('div');
-            slide.className = 'depoimento-slide';
+            const slide = document.createElement("div");
+            slide.className = "depoimento-slide";
             slide.innerHTML = `
                 <div class="depoimento-content">
-                    <div class="depoimento-video-container">
-                        <iframe class="depoimento-video" 
-                                src="${depoimento.video}" 
-                                frameborder="0" 
-                                allowfullscreen>
-                        </iframe>
-                    </div>
+                    
                     <div class="depoimento-info">
                         <blockquote class="depoimento-texto">
                             "${depoimento.texto}"
@@ -62,12 +56,12 @@ class CarrosselDepoimentos {
     }
 
     criarIndicadores() {
-        this.indicators.innerHTML = '';
+        this.indicators.innerHTML = "";
         
         for (let i = 0; i < this.totalSlides; i++) {
-            const indicator = document.createElement('div');
-            indicator.className = 'indicator';
-            indicator.addEventListener('click', () => {
+            const indicator = document.createElement("div");
+            indicator.className = "indicator";
+            indicator.addEventListener("click", () => {
                 this.mostrarSlide(i);
                 this.pararAutoPlay();
                 this.iniciarAutoPlay();
@@ -77,36 +71,36 @@ class CarrosselDepoimentos {
     }
 
     adicionarEventListeners() {
-        this.prevBtn.addEventListener('click', () => {
+        this.prevBtn.addEventListener("click", () => {
             this.slideAnterior();
             this.pararAutoPlay();
             this.iniciarAutoPlay();
         });
 
-        this.nextBtn.addEventListener('click', () => {
+        this.nextBtn.addEventListener("click", () => {
             this.proximoSlide();
             this.pararAutoPlay();
             this.iniciarAutoPlay();
         });
 
         // Pausar autoplay quando o mouse estiver sobre o carrossel
-        const carousel = document.querySelector('.depoimentos-carousel');
-        carousel.addEventListener('mouseenter', () => {
+        const carousel = document.querySelector(".depoimentos-carousel");
+        carousel.addEventListener("mouseenter", () => {
             this.pararAutoPlay();
         });
 
-        carousel.addEventListener('mouseleave', () => {
+        carousel.addEventListener("mouseleave", () => {
             this.iniciarAutoPlay();
         });
 
         // Suporte para navegação por teclado
-        document.addEventListener('keydown', (e) => {
+        document.addEventListener("keydown", (e) => {
             if (this.isCarouselVisible()) {
-                if (e.key === 'ArrowLeft') {
+                if (e.key === "ArrowLeft") {
                     this.slideAnterior();
                     this.pararAutoPlay();
                     this.iniciarAutoPlay();
-                } else if (e.key === 'ArrowRight') {
+                } else if (e.key === "ArrowRight") {
                     this.proximoSlide();
                     this.pararAutoPlay();
                     this.iniciarAutoPlay();
@@ -121,8 +115,8 @@ class CarrosselDepoimentos {
         this.track.style.transform = `translateX(${translateX}%)`;
         
         // Atualizar indicadores
-        document.querySelectorAll('.indicator').forEach((indicator, i) => {
-            indicator.classList.toggle('active', i === index);
+        document.querySelectorAll(".indicator").forEach((indicator, i) => {
+            indicator.classList.toggle("active", i === index);
         });
     }
 
@@ -150,7 +144,7 @@ class CarrosselDepoimentos {
     }
 
     isCarouselVisible() {
-        const carousel = document.querySelector('.depoimentos-carousel');
+        const carousel = document.querySelector(".depoimentos-carousel");
         const rect = carousel.getBoundingClientRect();
         return rect.top < window.innerHeight && rect.bottom > 0;
     }
@@ -167,16 +161,6 @@ const estilosDepoimentos = `
             margin: 0 auto;
         }
         
-        .depoimento-video-container {
-            flex: 0 0 400px;
-        }
-        
-        .depoimento-video {
-            width: 100%;
-            height: 225px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
         
         .depoimento-info {
             flex: 1;
@@ -184,7 +168,7 @@ const estilosDepoimentos = `
         }
         
         .depoimento-texto {
-            font-size: 1.2rem;
+            font-size: 1.4rem; /* Aumentado o tamanho da fonte */
             font-style: italic;
             line-height: 1.8;
             margin-bottom: 25px;
@@ -193,7 +177,7 @@ const estilosDepoimentos = `
         }
         
         .depoimento-texto::before {
-            content: '"';
+            content: \"\";
             position: absolute;
             left: 0;
             top: -10px;
@@ -268,22 +252,13 @@ const estilosDepoimentos = `
                 text-align: center;
             }
             
-            .depoimento-video-container {
-                flex: none;
-                width: 100%;
-                max-width: 350px;
-            }
-            
-            .depoimento-video {
-                height: 200px;
-            }
             
             .depoimento-info {
                 text-align: center;
             }
             
             .depoimento-texto {
-                font-size: 1.1rem;
+                font-size: 1.3rem; /* Ajuste para telas menores */
                 padding-left: 20px;
             }
             
@@ -301,12 +276,9 @@ const estilosDepoimentos = `
                 padding: 30px 15px;
             }
             
-            .depoimento-video {
-                height: 180px;
-            }
             
             .depoimento-texto {
-                font-size: 1rem;
+                font-size: 1.2rem; /* Ajuste para telas muito pequenas */
                 padding-left: 15px;
             }
         }
@@ -314,10 +286,10 @@ const estilosDepoimentos = `
 `;
 
 // Adicionar estilos ao head
-document.head.insertAdjacentHTML('beforeend', estilosDepoimentos);
+document.head.insertAdjacentHTML("beforeend", estilosDepoimentos);
 
 // Inicializar quando o DOM estiver carregado
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function() {
     new CarrosselDepoimentos();
 });
 
