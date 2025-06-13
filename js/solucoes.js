@@ -1,36 +1,36 @@
 // Gerenciamento das soluções tecnológicas
 class GerenciadorSolucoes {
     constructor() {
-        this.modal = document.getElementById('solucao-modal');
-        this.modalBody = document.getElementById('modal-body');
-        this.closeBtn = document.querySelector('.modal-close');
+        this.modal = document.getElementById("solucao-modal");
+        this.modalBody = document.getElementById("modal-body");
+        this.closeBtn = document.querySelector(".modal-close");
         this.inicializar();
     }
 
     inicializar() {
         // Adicionar event listeners para os cards
-        document.querySelectorAll('.solucao-card').forEach(card => {
-            card.addEventListener('click', (e) => {
+        document.querySelectorAll(".solucao-card").forEach(card => {
+            card.addEventListener("click", (e) => {
                 const solucaoId = card.dataset.solucao;
                 this.abrirModal(solucaoId);
             });
         });
 
         // Event listener para fechar modal
-        this.closeBtn.addEventListener('click', () => {
+        this.closeBtn.addEventListener("click", () => {
             this.fecharModal();
         });
 
         // Fechar modal clicando fora dele
-        this.modal.addEventListener('click', (e) => {
+        this.modal.addEventListener("click", (e) => {
             if (e.target === this.modal) {
                 this.fecharModal();
             }
         });
 
         // Fechar modal com ESC
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && this.modal.style.display === 'block') {
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && this.modal.style.display === "block") {
                 this.fecharModal();
             }
         });
@@ -42,19 +42,19 @@ class GerenciadorSolucoes {
 
         const conteudo = this.criarConteudoModal(solucao);
         this.modalBody.innerHTML = conteudo;
-        this.modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
+        this.modal.style.display = "block";
+        document.body.style.overflow = "hidden";
 
         // Adicionar animação de entrada
         setTimeout(() => {
-            this.modal.querySelector('.modal-content').style.transform = 'scale(1)';
-            this.modal.querySelector('.modal-content').style.opacity = '1';
+            this.modal.querySelector(".modal-content").style.transform = "scale(1)";
+            this.modal.querySelector(".modal-content").style.opacity = "1";
         }, 10);
     }
 
     fecharModal() {
-        this.modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
+        this.modal.style.display = "none";
+        document.body.style.overflow = "auto";
     }
 
     criarConteudoModal(solucao) {
@@ -76,25 +76,19 @@ class GerenciadorSolucoes {
                     <p>${solucao.funcionamento}</p>
                 </div>
                 
-                <div class="modal-section">
-                    <h3>Vídeo Explicativo</h3>
-                    <div class="video-container">
-                        <iframe src="${solucao.video}" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
                 
                 <div class="modal-section">
                     <div class="vantagens-desvantagens">
                         <div class="vantagens">
                             <h4>✅ Vantagens</h4>
                             <ul>
-                                ${solucao.vantagens.map(v => `<li>${v}</li>`).join('')}
+                                ${solucao.vantagens.map(v => `<li>${v}</li>`).join("")}
                             </ul>
                         </div>
                         <div class="desvantagens">
                             <h4>⚠️ Desvantagens</h4>
                             <ul>
-                                ${solucao.desvantagens.map(d => `<li>${d}</li>`).join('')}
+                                ${solucao.desvantagens.map(d => `<li>${d}</li>`).join("")}
                             </ul>
                         </div>
                     </div>
@@ -108,7 +102,7 @@ class GerenciadorSolucoes {
                                 <span class="dado-label">${this.formatarLabel(chave)}:</span>
                                 <span class="dado-valor">${valor}</span>
                             </div>
-                        `).join('')}
+                        `).join("")}
                     </div>
                 </div>
             </div>
@@ -117,15 +111,15 @@ class GerenciadorSolucoes {
 
     formatarLabel(chave) {
         const labels = {
-            'capacidade': 'Capacidade',
-            'atendimento': 'Atendimento',
-            'custo': 'Custo Médio',
-            'durabilidade': 'Durabilidade',
-            'profundidade': 'Profundidade',
-            'vazao': 'Vazão',
-            'frequencia': 'Frequência',
-            'producao': 'Produção',
-            'eficiencia': 'Eficiência'
+            "capacidade": "Capacidade",
+            "atendimento": "Atendimento",
+            "custo": "Custo Médio",
+            "durabilidade": "Durabilidade",
+            "profundidade": "Profundidade",
+            "vazao": "Vazão",
+            "frequencia": "Frequência",
+            "producao": "Produção",
+            "eficiencia": "Eficiência"
         };
         return labels[chave] || chave;
     }
@@ -275,10 +269,11 @@ const estilosModal = `
 `;
 
 // Adicionar estilos ao head
-document.head.insertAdjacentHTML('beforeend', estilosModal);
+document.head.insertAdjacentHTML("beforeend", estilosModal);
 
 // Inicializar quando o DOM estiver carregado
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function() {
     new GerenciadorSolucoes();
 });
+
 

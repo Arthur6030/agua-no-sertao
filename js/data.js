@@ -113,7 +113,6 @@ const dadosSolucoes = {
             custo: 'R$ 2.500 a R$ 4.000',
             durabilidade: '20 a 30 anos'
         },
-        video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Placeholder
         imagens: [
             'images/cisterna1.jpg',
             'images/cisterna2.jpg',
@@ -146,7 +145,6 @@ const dadosSolucoes = {
             custo: 'R$ 15.000 a R$ 50.000',
             durabilidade: '15 a 25 anos'
         },
-        video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Placeholder
         imagens: [
             'images/poco1.jpg',
             'images/poco2.jpg',
@@ -179,7 +177,6 @@ const dadosSolucoes = {
             custo: 'R$ 0,02 a R$ 0,05 por litro',
             frequencia: 'Semanal ou quinzenal'
         },
-        video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Placeholder
         imagens: [
             'images/carro-pipa1.jpg',
             'images/carro-pipa2.jpg',
@@ -212,7 +209,6 @@ const dadosSolucoes = {
             custo: 'R$ 25.000 a R$ 100.000',
             durabilidade: '10 a 15 anos'
         },
-        video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Placeholder
         imagens: [
             'images/dessalinizador1.jpg',
             'images/dessalinizador2.jpg',
@@ -229,7 +225,6 @@ const dadosDepoimentos = [
         idade: 52,
         local: 'Juazeiro - BA',
         profissao: 'Agricultora',
-        video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Placeholder
         texto: 'Antes da cisterna, eu tinha que caminhar 3 quilômetros todos os dias para buscar água. Agora, com a água da chuva guardada, minha família tem água limpa o ano todo. Foi uma mudança que transformou nossa vida.',
         foto: 'images/maria-gracas.jpg',
         solucao: 'Cisterna de placas'
@@ -240,7 +235,6 @@ const dadosDepoimentos = [
         idade: 45,
         local: 'Petrolina - PE',
         profissao: 'Presidente da Associação Comunitária',
-        video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Placeholder
         texto: 'O poço artesiano mudou nossa comunidade. Antes dependíamos dos carros-pipa, que nem sempre chegavam. Hoje temos água para beber, cozinhar e até para uma pequena horta comunitária.',
         foto: 'images/joao-batista.jpg',
         solucao: 'Poço artesiano comunitário'
@@ -251,7 +245,6 @@ const dadosDepoimentos = [
         idade: 38,
         local: 'Sobral - CE',
         profissao: 'Professora',
-        video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Placeholder
         texto: 'O dessalinizador trouxe esperança para nossa escola. As crianças agora têm água potável durante todo o período letivo. Isso melhorou muito a frequência escolar e a saúde dos alunos.',
         foto: 'images/ana-lucia.jpg',
         solucao: 'Dessalinizador solar'
@@ -262,7 +255,6 @@ const dadosDepoimentos = [
         idade: 60,
         local: 'Campina Grande - PB',
         profissao: 'Aposentado',
-        video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Placeholder
         texto: 'Vivi toda minha vida no sertão e vi muitas secas. Mas com as tecnologias que chegaram aqui, como as cisternas e os poços, a vida ficou mais digna. Não precisamos mais migrar nas secas.',
         foto: 'images/antonio-carlos.jpg',
         solucao: 'Múltiplas tecnologias'
@@ -273,7 +265,6 @@ const dadosDepoimentos = [
         idade: 29,
         local: 'Caruaru - PE',
         profissao: 'Enfermeira',
-        video: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Placeholder
         texto: 'Como profissional de saúde, vejo diariamente o impacto da falta de água na saúde das pessoas. Os projetos de água potável reduziram drasticamente os casos de doenças relacionadas à água contaminada.',
         foto: 'images/francisca-alves.jpg',
         solucao: 'Sistema de tratamento comunitário'
@@ -352,55 +343,59 @@ const dadosQuiz = [
             'Dificuldade de acesso às comunidades'
         ],
         resposta: 2,
-        explicacao: 'A principal desvantagem dos carros-pipa é serem uma solução temporária e cara que não promove a autonomia das comunidades, mantendo-as dependentes de fornecimento externo.'
+        explicacao: 'A principal desvantagem dos carros-pipa é que são uma solução temporária e cara, que não promove a autonomia hídrica das comunidades, gerando dependência externa.'
     },
     {
         id: 7,
-        pergunta: 'Quantas pessoas são beneficiadas pelo projeto de Transposição do Rio São Francisco?',
+        pergunta: 'Qual bacia hidrográfica é fundamental para o semiárido nordestino?',
         opcoes: [
-            '5 milhões de pessoas',
-            '8 milhões de pessoas',
-            '12 milhões de pessoas',
-            '15 milhões de pessoas'
+            'Bacia Amazônica',
+            'Bacia do Paraná',
+            'Bacia do São Francisco',
+            'Bacia do Tocantins-Araguaia'
         ],
         resposta: 2,
-        explicacao: 'O projeto de Transposição do Rio São Francisco beneficia aproximadamente 12 milhões de pessoas em 390 municípios dos estados de Pernambuco, Ceará, Paraíba e Rio Grande do Norte.'
+        explicacao: 'A Bacia do Rio São Francisco é a principal bacia hidrográfica do semiárido, sendo vital para o abastecimento de água e o desenvolvimento da região.'
     },
     {
         id: 8,
-        pergunta: 'Qual é a eficiência média de um dessalinizador em termos de aproveitamento da água?',
+        pergunta: 'O que é a dessalinização por osmose reversa?',
         opcoes: [
-            '20% a 30%',
-            '40% a 60%',
-            '70% a 80%',
-            '90% a 95%'
+            'Processo de fervura da água para remover impurezas',
+            'Filtragem da água através de areia e cascalho',
+            'Remoção de sais da água através de membranas semipermeáveis',
+            'Adição de produtos químicos para purificar a água'
         ],
-        resposta: 1,
-        explicacao: 'Os dessalinizadores têm eficiência de 40% a 60% de aproveitamento, ou seja, de cada 100 litros de água salobra, produzem entre 40 a 60 litros de água potável.'
+        resposta: 2,
+        explicacao: 'A osmose reversa é um processo que utiliza membranas semipermeáveis para remover sais e outras substâncias da água, tornando-a potável.'
     },
     {
         id: 9,
-        pergunta: 'Qual organização é responsável pelo Programa Um Milhão de Cisternas?',
+        pergunta: 'Qual a importância da educação ambiental na convivência com o semiárido?',
         opcoes: [
-            'IBAMA',
-            'ASA (Articulação Semiárido Brasileiro)',
-            'INCRA',
-            'DNOCS'
+            'Aumentar o consumo de água',
+            'Promover o desperdício de água',
+            'Conscientizar sobre o uso racional da água e a importância das tecnologias sustentáveis',
+            'Incentivar a migração para outras regiões'
         ],
-        resposta: 1,
-        explicacao: 'A ASA (Articulação Semiárido Brasileiro) é a rede de organizações da sociedade civil responsável pelo Programa Um Milhão de Cisternas e outras ações de convivência com o semiárido.'
+        resposta: 2,
+        explicacao: 'A educação ambiental é crucial para conscientizar a população sobre a importância do uso racional da água e a adoção de práticas e tecnologias sustentáveis para a convivência com o semiárido.'
     },
     {
         id: 10,
-        pergunta: 'Qual é a durabilidade média de uma cisterna bem construída?',
+        pergunta: 'Qual o papel das barragens subterrâneas no semiárido?',
         opcoes: [
-            '5 a 10 anos',
-            '10 a 15 anos',
-            '20 a 30 anos',
-            '50 anos ou mais'
+            'Armazenar água na superfície para irrigação',
+            'Evitar a evaporação da água e recarregar o lençol freático',
+            'Desviar o curso de rios para outras regiões',
+            'Aumentar a salinidade do solo'
         ],
-        resposta: 2,
-        explicacao: 'Uma cisterna bem construída e com manutenção adequada pode durar de 20 a 30 anos, sendo um investimento de longo prazo para a segurança hídrica das famílias.'
+        resposta: 1,
+        explicacao: 'As barragens subterrâneas são construídas para reter a água da chuva no subsolo, evitando a evaporação e recarregando o lençol freático, o que permite o uso da água para agricultura e consumo.'
     }
 ];
+
+// Exporta os dados para serem usados em outros módulos
+export { dadosMapa, dadosSolucoes, dadosDepoimentos, dadosQuiz };
+
 
