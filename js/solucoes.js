@@ -62,7 +62,7 @@ class GerenciadorSolucoes {
         const videos = {
             cisternas: "https://www.youtube.com/embed/j20yFzZNYso",
             pocos: "https://www.youtube.com/embed/jBUhne8ocGg", 
-            'carros-pipa': "https://www.youtube.com/embed/f67nPgy8AzQ",
+            'carros-pipa': "https://www.youtube.com/watch?v=iKiGhE8jElg",
             dessalinizadores: "https://www.youtube.com/embed/RyJM0B473Uk"
         };
 
